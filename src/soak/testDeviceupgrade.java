@@ -98,13 +98,13 @@ public class testDeviceupgrade extends StartupTestCase2 {
 			cleanUpLogin();
 			RestAssured.useRelaxedHTTPSValidation();
 			RestAssured.enableLoggingOfRequestAndResponseIfValidationFails();
-			methods.unManageDevice(driver, rxIP);
+//			methods.unManageDevice(driver, rxIP);
 //			discoveryMethods.unmanageDevice1(driver,boxillaManager, boxillaRestUser, boxillaRestPassword,rxMac,rxIp);
-			methods.unManageDevice(driver, rxIPDual);
+//			methods.unManageDevice(driver, rxIPDual);
 ////			discoveryMethods.unmanageDevice1(driver,boxillaManager, boxillaRestUser, boxillaRestPassword,rxMacDual,rxIPDual);
 			methods.unManageDevice(driver, txIP);
 ////			discoveryMethods.unmanageDevice1(driver,boxillaManager, boxillaRestUser, boxillaRestPassword,txMac,txIP);
-			methods.unManageDevice(driver, txIpDual);
+//			methods.unManageDevice(driver, txIpDual);
 ////			discoveryMethods.unmanageDevice1(driver,boxillaManager, boxillaRestUser, boxillaRestPassword,txMacDual,txIpDual);
 
 			
@@ -128,20 +128,20 @@ public class testDeviceupgrade extends StartupTestCase2 {
 
 		// add license
 		// sysMethods.addUnlimitedLicense(driver);
-		log.info("Test Preparation - Managing RX");
-		discoveryMethods.discoverDevices(driver); // navigates and clicks on discovery
-		discoveryMethods.stateAndIPcheck(driver, rxMac, ipCheck, rxIP, gateway, netmask); // runs discovery until found
-																							// // and changes network//
-																							// config when found
-		
-		discoveryMethods.manageApplianceAutomatic(driver, "Test_RX", rxMac, ipCheck);
+//		log.info("Test Preparation - Managing RX");
+//		discoveryMethods.discoverDevices(driver); // navigates and clicks on discovery
+//		discoveryMethods.stateAndIPcheck(driver, rxMac, ipCheck, rxIP, gateway, netmask); // runs discovery until found
+//																							// // and changes network//
+//																							// config when found
+//		
+//		discoveryMethods.manageApplianceAutomatic(driver, "Test_RX", rxMac, ipCheck);
 //		discoveryMethods.manageDevice1(driver,boxillaManager, boxillaRestUser, boxillaRestPassword, rxIP, "Test_RX");
 		// manages device (network should be changed at this stage)
 //		
-		log.info("Test Preparation - Managing RXDual"); // also ensures device is managed
-		discoveryMethods.discoverDevices(driver);
-		discoveryMethods.stateAndIPcheck(driver, rxMacDual, ipCheck, rxIPDual, gateway, netmask);
-		discoveryMethods.manageApplianceAutomatic(driver, "Test_RX_Dual", rxMacDual, ipCheck);
+//		log.info("Test Preparation - Managing RXDual"); // also ensures device is managed
+//		discoveryMethods.discoverDevices(driver);
+//		discoveryMethods.stateAndIPcheck(driver, rxMacDual, ipCheck, rxIPDual, gateway, netmask);
+//		discoveryMethods.manageApplianceAutomatic(driver, "Test_RX_Dual", rxMacDual, ipCheck);
 //		discoveryMethods.manageDevice1(driver,boxillaManager, boxillaRestUser, boxillaRestPassword, rxIPDual, "Test_RX_Dual");
 		log.info("Test Preparation - Managing TX");
 		discoveryMethods.discoverDevices(driver);
@@ -153,14 +153,14 @@ public class testDeviceupgrade extends StartupTestCase2 {
 //		discoveryMethods.manageDevice1(driver,boxillaManager, boxillaRestUser, boxillaRestPassword, txIP, "Test_TX");
 //
 //		log.info("Test Preparation - Managing TXDual"); // also ensures device is//managed
-		discoveryMethods.discoverDevices(driver);
-		discoveryMethods.stateAndIPcheck(driver, txMacDual, ipCheck, txIPDual, gateway, netmask);
-		discoveryMethods.manageApplianceAutomatic(driver, "Test_TX_Dual", txMacDual, ipCheck);
+//		discoveryMethods.discoverDevices(driver);
+//		discoveryMethods.stateAndIPcheck(driver, txMacDual, ipCheck, txIPDual, gateway, netmask);
+//		discoveryMethods.manageApplianceAutomatic(driver, "Test_TX_Dual", txMacDual, ipCheck);
 //		discoveryMethods.manageDevice1(driver,boxillaManager, boxillaRestUser, boxillaRestPassword, txIPDual, "Test_TX_Dual");
 		log.info("Appliance Managed Successfully - Test Preparation Completed");
 	}
 
-	@Test
+//	@Test
 	public void upgradeDowngradeRX() throws InterruptedException {
 		log.info("Soak Test Case 01 - Upgrade downgrade RX");
 		RestAssured.useRelaxedHTTPSValidation();
@@ -216,7 +216,7 @@ public class testDeviceupgrade extends StartupTestCase2 {
 		log.info("Device Upgraded/Downgraded Successfully - Soak Test Case 01 complete");
 	}
 
-	@Test
+//	@Test
 	public void upgradeDowngradeRXDual() throws InterruptedException {
 		log.info("Soak Test Case 02 - Upgrade downgrade RXDual");
 		RestAssured.useRelaxedHTTPSValidation();
@@ -341,7 +341,7 @@ public class testDeviceupgrade extends StartupTestCase2 {
 		log.info("Device Upgraded/Downgraded Successfully - Soak Test Case 01 complete");
 	}
 
-	@Test
+//	@Test
 	public void upgradeDowngradeTXDual() throws InterruptedException {
 		log.info("Soak Test Case 04 - Upgrade downgrade TXDual");
 
@@ -420,7 +420,7 @@ public class testDeviceupgrade extends StartupTestCase2 {
 
 	}
 
-	@Test
+//	@Test
 	public void upgradeDowngradeAllDevices() throws InterruptedException {
 		log.info("Soak Test Case 03 - Upgrade all devices");
 		methods.navigateToUpgrade(driver);

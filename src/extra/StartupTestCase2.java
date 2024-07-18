@@ -72,7 +72,7 @@ public class StartupTestCase2 {
 	public static boolean isManage = false;
 	public static boolean isUnmanage = false;
 	public static boolean isEmerald = false;
-	public static boolean isZeroU = false;
+	public static boolean isZeroU = true;
 	protected String deviceUserName, devicePassword;
 	public WebDriver driver;
 	public String boxillaManager;
