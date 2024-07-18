@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+ <suite name="SeleniumAutomation" verbose="1" configfailurepolicy="continue">
+<!--	<parameter name="release" value="2445" />
+	<parameter name="browser" value="Firefox" /> -->
+	
+	<parameter name="release" value="${release}" />
+	<parameter name="browser" value="${browser}" />
+	<parameter name="runFullSetUp" value="false" />
+	
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+		<listener class-name="testNG.AnnotationTransformer" />
+		<listener class-name="testNG.FixRetryListener" />
+	</listeners>
+
+	 	
+	 
+	
+	
+	
+	
+	<test name="Parameters_REST">
+	<groups>
+		<run>
+			<exclude name="noSE" />
+		</run>
+		</groups>
+		<classes>
+		
+			<class name="invisaPC.Rest.device.Template" />
+			
+		</classes>
+	</test>
+
+	
+	
+		
+		<test name="Users">
+		<groups>
+		<run>
+			<exclude name="noSE" />
+		</run>
+		</groups>
+		<classes>
+			
+			<class name="user.AddUserTemplate" />
+		
+		</classes>
+	</test>
+	
+		
+	
+</suite>

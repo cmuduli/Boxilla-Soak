@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="SeleniumAutomation" verbose="1" configfailurepolicy="continue">
+
+	<parameter name="browser" value="Firefox" />
+	<parameter name="release1" value="bxa_4.9.1.8145.bbx" />
+	<parameter name="release2" value="bxa_4.5.1.6764.bbx" />
+	<parameter name="runFullSetUp" value="false" />
+
+	<!-- <parameter name="browser" value="${browser}" />s <parameter name="release1" 
+		value="${release1}" /> <parameter name="release2" value="${release2}" /> -->
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+	</listeners>
+
+
+
+	<!-- <test name="Add Delete User" > <method-selectors> <method-selector> 
+		<script language="beanshell"> <![CDATA[ if(testngMethod.getMethodName().contains("addDeleteUser")) 
+		{ testngMethod.setInvocationCount(20); } return true; ]]> </script> </method-selector> 
+		</method-selectors> <classes> <class name="soak.AddDeleteUserAdminAutoConnectOff" 
+		/> <class name="soak.AddDeleteUserAdminAutoConnectOn" /> <class name="soak.AddDeleteUserGeneralAutoConnectOff" 
+		/> <class name="soak.AddDeleteUserPowerAutoConnectOff" /> </classes> </test> -->
+
+
+
+
+	 <test name="Device Upgrade">
+		<method-selectors>
+			<method-selector>
+				<script language="beanshell">
+                <![CDATA[
+                if(testngMethod.getMethodName().contains("upgradeDowngrade")) {
+                testngMethod.setInvocationCount(5);
+                }
+                return true;
+                ]]>
+				</script>
+			</method-selector>
+		</method-selectors>
+		<classes>
+
+			<class name="soak.testDeviceupgrade" />
+
+		</classes>
+	</test> 
+
+
+	 <test name="Boxilla Restore / Reset">
+		<method-selectors>
+			<method-selector>
+				<script language="beanshell">
+                <![CDATA[
+                if(testngMethod.getMethodName().contains("restoreReset")) {
+                testngMethod.setInvocationCount(20);
+                }
+                return true;
+                ]]>
+				</script>
+			</method-selector>
+		</method-selectors>
+		<classes>
+
+			<class name="soak.RestoreResetDB" />
+
+		</classes>
+	</test>
+
+	 <test name="Boxilla Reboot">
+		<method-selectors>
+			<method-selector>
+				<script language="beanshell">
+                <![CDATA[
+                if(testngMethod.getMethodName().contains("boxillaReboot")) {
+                testngMethod.setInvocationCount(20);
+                }
+                return true;
+                ]]>
+				</script>
+			</method-selector>
+		</method-selectors>
+		<classes>
+
+			<class name="soak.BoxillaReboot" />
+
+		</classes>
+	</test> 
+
+<!--
+	<test name="Boxilla Upgrade / Downgrade">
+		<method-selectors>
+			<method-selector>
+				<script language="beanshell">
+                <![CDATA[
+                if(testngMethod.getMethodName().contains("versionUpgrade")) {
+                testngMethod.setInvocationCount(20);
+                }
+                return true;
+                ]]>
+				</script>
+			</method-selector>
+		</method-selectors>
+		<classes>
+
+			<class name="soak.BoxillaUpgrade" />
+
+		</classes>
+	</test>-->
+ 
+	  <test name="Boxilla IP Change">
+		<method-selectors>
+			<method-selector>
+				<script language="beanshell">
+                <![CDATA[
+                if(testngMethod.getMethodName().contains("boxillaIPChange")) {
+                testngMethod.setInvocationCount(20);
+                }
+                return true;
+                ]]>
+				</script>
+			</method-selector>
+		</method-selectors>
+		<classes>
+
+			<class name="soak.BoxillaIPChange" />
+
+		</classes>
+	</test> 
+
+	<!-- <test name="clusterUpgrade"> <classes> <class name="soak.ClusterUpgrade"></class> 
+		</classes> </test> -->
+
+	<!-- <test name="ClusterSwitchOver"> <classes> <class name="soak.ClusterSwitchOver"></class> 
+		</classes> </test> <test name="clusterboxilladown"> <classes> <class name="soak.ClusterBoxilladown"></class> 
+		</classes> </test> -->
+
+</suite>

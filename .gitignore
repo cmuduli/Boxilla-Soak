@@ -1,0 +1,9 @@
+bin/
+emeraldScripts/
+lib/
+resources/
+test-output/
+emeraldScripts/
+selenium/
+*.log
+
